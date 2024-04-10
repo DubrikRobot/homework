@@ -1,0 +1,44 @@
+using System;
+
+public class Program {
+    public static void Main(string[] args) {
+        // Исходный массив
+        int[] array = {1, 2, 3, 4, 5};
+
+        // Вывод исходного массива
+        Console.WriteLine("Исходный массив:");
+        PrintArray(array);
+
+        // Переворачиваем массив
+        ReverseArray(array);
+
+        // Вывод перевернутого массива
+        Console.WriteLine("Перевернутый массив:");
+        PrintArray(array);
+    }
+
+    // Метод для переворачивания массива
+    public static void ReverseArray(int[] arr) {
+        int left = 0;
+        int right = arr.Length - 1;
+
+        while (left < right) {
+            // Обмен значений между левым и правым элементами
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            // Переходим к следующим элементам
+            left++;
+            right--;
+        }
+    }
+
+    // Метод для вывода массива на консоль
+    public static void PrintArray(int[] arr) {
+        foreach (int element in arr) {
+            Console.Write(element + " ");
+        }
+        Console.WriteLine();
+    }
+}
